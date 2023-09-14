@@ -1,0 +1,102 @@
+@use "../variable/" as *;
+@use "../mixin" as *;
+
+
+////////////////////////////////////////////////////////////
+//  u-utility
+////////////////////////////////////////////////////////////
+.u-en{
+
+}
+.u-ff-yugo {
+	font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", 'Noto Sans JP',sans-serif;
+}
+.u-ff-poppins{
+	font-family: poppins, 'Noto Sans JP', "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","游ゴシック体",sans-serif;
+}
+.u-bold{
+  font-weight: 700;
+}
+.u-mid{
+	font-weight: 500;
+}
+.u-hidden{
+  display: none !important;
+}
+.u-no-click{
+  pointer-events: none;
+}
+.u-base-fit{
+	width: 100%;
+}
+
+.u-base-txt{
+
+}
+
+.u-align-center{
+	text-align: center;
+}
+
+.u-underline{
+	text-decoration: underline;
+}
+
+
+
+
+.u-hv-o,.u-hv-o-arrow--right{
+  display: block;
+}
+.is-pc,.is-tb{
+  .u-on-sp{
+    pointer-events: none;
+  }
+}
+
+.is-pc{
+  .u-hv-under{
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+	a.u-underline{
+		&:hover{
+			text-decoration: none;
+		}
+	}
+
+  .u-tel-num{
+    pointer-events: none;
+  }
+
+}
+
+
+.u-img{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+////////////////////////////////////////////////////////////
+// margin .u-mt-1~.u-mt-50 em
+////////////////////////////////////////////////////////////
+.u-mt-05 {
+	margin-top: .5em !important;
+}
+.u-mb-05 {
+	margin-bottom: .5em !important;
+}
+
+@for $i from 1 through 50 {
+  .u-mt-#{$i} {
+  	margin-top: $i * 1em !important;
+  }
+}
+@for $i from 1 through 50 {
+  .u-mb-#{$i} {
+  	margin-bottom: $i * 1em !important;
+  }
+}

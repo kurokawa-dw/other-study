@@ -1,0 +1,17 @@
+@use "../variable" as *;
+@use "../mixin" as *;
+@use "sass:math";
+
+////////////////////////////////////////////////////////////
+// l-header
+////////////////////////////////////////////////////////////
+.l-header{
+	width: 100%;
+	padding-top: 35px;
+	// padding: 34px 0 0 calc($artbordW_PC / 160 * 1%);
+	position: absolute;
+	z-index: 10;
+	&__logo{
+		width: 270px;
+	}
+}

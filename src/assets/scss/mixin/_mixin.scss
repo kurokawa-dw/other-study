@@ -1,0 +1,80 @@
+
+@use "../variable" as *;
+
+// vw
+//////////////////////////////////////////////////////////////
+// width: vw(386);
+@function vw($size, $viewport: $vwViewPort){
+  $rate: calc(100 / $viewport);
+  @return $rate * $size * 1vw;
+}
+@function vwTab($size, $viewport: $vwViewPortTab){
+  $rate: calc(100 / $viewport);
+  @return $rate * $size * 1vw;
+}
+@function vwPc($size, $viewport: $vwViewPortPc){
+  $rate: calc(100 / $viewport);
+  @return $rate * $size * 1vw;
+}
+
+
+// pcMin pcMax
+////////////////////////////////////////////////////////////
+@function pcMin($size){
+	@return min(vwPc($size), $size * 1px)
+}
+@function pcMax($size){
+	@return max(vwPc($size), $size * 1px)
+}
+
+// pcSize
+////////////////////////////////////////////////////////////
+@function pcSize($size){
+  @return $size * calc($vwViewPortPc / $vwViewPort) * 1px;
+}
+
+
+// percentage
+////////////////////////////////////////////////////////////
+@function percent($a , $b){
+	$result: calc($a / $b) * 100%;
+	@return $result;
+}
+
+
+
+// flex
+//////////////////////////////////////////////////////////////
+// @include flex(space-between, center);
+@mixin flex($justify: space-between, $align: stretch, $wrap: wrap, $flex: flex){
+  // display: -webkit-flex;/
+  display: $flex;
+  -webkit-justify-content: $justify;
+  justify-content: $justify;
+  -webkit-align-items: $align;
+  align-items: $align;
+  -webkit-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+
+// margin-center
+//////////////////////////////////////////////////////////////
+@mixin marCenter(){
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin posiCenter(){
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+@mixin fSmooth(){
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+

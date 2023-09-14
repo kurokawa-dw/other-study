@@ -1,0 +1,93 @@
+@use "../variable" as *;
+@use "../mixin" as *;
+@use "sass:math";
+
+
+////////////////////////////////////////////////////////////
+// l-footer
+////////////////////////////////////////////////////////////
+.l-footer{
+
+	&__contents{
+		@include flex();
+	}
+	&__logo{
+		width: pcMin(256);
+		height: pcMin(239);
+		background-color: #302C67;
+		@include flex(center,center);
+		img{
+			width: 100%;
+			height: 75%;
+			object-fit: cover;
+		}
+	}
+
+	&__nav{
+		@include flex();
+
+		&__block{
+			&:nth-child(n+2){
+				margin-left: pcMin(180);
+			}
+		}
+
+		&__label{
+			margin-bottom: pcMin(25);
+			&.--chapter{
+				width: pcMin(131);
+			}
+			&.--site{
+				width: pcMin(60);
+			}
+			img{
+				display: block;
+			}
+		}
+
+		&__list{
+			li{
+				margin-left: pcMin(15);
+				&:nth-child(n+2){
+					margin-top: pcMin(18);
+				}
+				a{
+					font-size: pcMin(24);
+					letter-spacing: 0.05em;
+					&::before{
+						content: '-';
+						display: inline-block;
+						margin-right: pcMin(15);
+					}
+				}
+			}
+		}
+	}
+
+	&__sns-list{
+		margin-top: auto;
+		@include flex($align: center);
+		img{
+			display: block;
+		}
+		.twitter{
+			width: pcMin(49);
+		}
+		.instagram{
+			width: pcMin(36);
+			margin-left: pcMin(38);
+		}
+	}
+
+
+
+
+
+
+	&__copyright{
+		margin-top: pcMin(20);
+		padding: pcMin(80) 0;
+		text-align: center;
+		font-size: pcMin(14);
+	}
+}

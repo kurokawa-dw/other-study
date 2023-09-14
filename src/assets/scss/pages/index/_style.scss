@@ -1,0 +1,384 @@
+@use "../../variable" as *;
+@use "../../mixin" as *;
+@use "sass:math";
+
+
+////////////////////////////////////////////////////////////
+// kv
+////////////////////////////////////////////////////////////
+.kv{
+	position: relative;
+	&__copy-block{
+		width: 100%;
+		position: absolute;
+		bottom: pcMin(60);
+		text-align: center;
+	}
+
+	&__copy{
+		width: pcMin(514);
+		margin: 0 auto;
+		img{
+			display: block;
+			filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.9));
+		}
+	}
+
+	&__txt{
+		width: pcMin(874);
+		margin: pcMin(70) auto 0;
+		img{
+			filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.9));
+		}
+	}
+
+	&__logo{
+		width: pcMin(570);
+		position: absolute;
+		top: vwPc(188);
+		right: 0;
+	}
+
+}
+
+
+////////////////////////////////////////////////////////////
+// section-intro
+////////////////////////////////////////////////////////////
+.section-intro{
+	// margin-top: 250px;
+	margin-top: pcMin(250);
+
+	&__inner-section{
+		position: relative;
+		&.--1{
+			padding-left: pcMin(130);
+			&::before{
+				content: '';
+				display: block;
+				width: pcMin(653);
+				height: pcMin(570);
+				background-image: url(../../../../../public/assets/images/section-intro_map-bg.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				position: absolute;
+				left: pcMin(60);
+				top: vwPc(-50);
+				z-index: -1;
+				@media only screen and (min-width: 1701px){
+					top: -50px;
+				}
+			}
+		}
+		&.--2{
+			margin-top: pcMin(527);
+			padding-right: pcMin(130);
+		}
+
+
+		&__ttl{
+			&.--1{
+				width: pcMin(408);
+			}
+
+			&.--2{
+				width: pcMin(350);
+				margin-left: auto;
+				margin-right: pcMin(50);
+			}
+		}
+		&__des{
+			font-size: pcMin(18);
+
+			&.--1{
+				width: pcMin(424);
+				margin-top: pcMin(357);
+			}
+			&.--2{
+				width: pcMin(397);
+				margin-top: pcMin(62);
+				margin-left: auto;
+			}
+		}
+
+		&__img{
+			position: absolute;
+			&.--1{
+				width: pcMin(803);
+				top: pcMax(-150);
+				right: pcMax(-190);
+			}
+
+			&.--2--1{
+				width: pcMin(577);
+				top: pcMin(213);
+				left: 0;
+			}
+			&.--2--2{
+				width: pcMin(1031);
+				position: static;
+				margin: pcMin(190) pcMax(-190 - 130) 0 auto;
+			}
+		}
+
+	}
+
+
+	&__bottom-copy{
+		width: pcMin(505);
+		margin: pcMin(300) 0 0 pcMin(220);
+	}
+}
+
+////////////////////////////////////////////////////////////
+// section-middle
+////////////////////////////////////////////////////////////
+.section-middle{
+	margin-top: pcMin(127);
+	padding-bottom: pcMin(230);
+	background-color: #F5F5ED;
+
+
+	&__inner-section{
+		position: relative;
+
+		&.--1{
+			margin-top: pcMin(125);
+			padding: 0 pcMin(112) 0 pcMin(220);
+			@include flex;
+		}
+
+		&.--2{
+			margin-top: pcMin(155);
+			padding: 0 pcMin(112) 0 pcMin(220);
+		}
+
+		&__ttl{
+			&.--1{
+				width: pcMin(451);
+			}
+			&.--2{
+				width: pcMin(405);
+			}
+		}
+
+		&__des{
+			font-size: pcMin(18);
+			&.--1{
+				width: pcMin(397);
+				margin-top: pcMin(401);
+				// margin: pcMin(-155) 0 0 auto;
+			}
+			&.--2{
+				width: pcMin(432);
+				margin-top: pcMin(130);
+			}
+		}
+
+		&__drawing-img{
+			// @media only screen and (min-width: 1701px){
+			// 	top: -317px;
+			// 	right: -227px;
+			// }
+			width: pcMin(1085);
+			position: absolute;
+			top: pcMax(-317);
+			right: pcMax(-227);
+		}
+	}
+
+
+	&__quality{
+		margin-top: pcMin(360);
+		&__label{
+			width: pcMin(313);
+			margin: 0 auto;
+		}
+
+		&__figure{
+			margin-top: pcMin(130);
+		}
+	}
+
+	&__insert-kv{
+		width: pcMin(1727);
+		margin: pcMin(120) pcMax(-160) 0 auto;
+		position: relative;
+		z-index: 2;
+		// @media only screen and (min-width: 1701px){
+		// 	margin-right: -160px;
+		// }
+	}
+}
+
+////////////////////////////////////////////////////////////
+// section-brand
+////////////////////////////////////////////////////////////
+.section-brand{
+	&__ttl{
+		width: pcMin(299);
+		margin-top: pcMin(260);
+	}
+
+	&__brand-list{
+		margin-top: pcMin(125);
+		&__box{
+			@include flex();
+			padding-right: pcMin(127);
+			position: relative;
+			&:nth-child(n+2){
+				margin-top: pcMin(122);
+				padding-top: pcMin(122);
+				&::before{
+					content: '';
+					display: block;
+					width: pcMin(1630);
+					height: 1px;
+					background-color: #BABABA;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+		&__img{
+			width: pcMin(670);
+		}
+		&__txt-block{
+			width: pcMin(420);
+		}
+
+		&__logo{
+			&.--stylej{
+				width: pcMin(161);
+			}
+			&.--authentic{
+				width: pcMin(296);
+			}
+		}
+
+		&__copy{
+			margin-top: pcMin(36);
+			&.--stylej{
+				width: pcMin(313);
+			}
+			&.--authentic{
+				width: pcMin(391);
+			}
+		}
+
+		&__txt{
+			margin-top: pcMin(50);
+			font-size: pcMin(16);
+			line-height: 2.1;
+		}
+
+		.to-brand-site{
+			margin-top: pcMin(50);
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////
+// section-sabae-plant
+////////////////////////////////////////////////////////////
+.section-sabae-plant{
+	margin-top: pcMin(450);
+	padding: pcMin(150) 0;
+	background-color: #3A3E43;
+	color: #fff;
+
+	&__ttl{
+		@include flex($justify: flex-start, $align: flex-end);
+		img,span{
+			display: block;
+		}
+		img{
+			width: pcMin(302);
+		}
+		.ja{
+			margin-left: pcMin(16);
+			font-size: pcMin(16);
+		}
+	}
+
+
+	&__box{
+		margin-top: pcMin(130);
+		@include flex();
+		padding-right: pcMin(127);
+		position: relative;
+		&__img{
+			width: pcMin(670);
+		}
+		&__txt-block{
+			width: pcMin(420);
+		}
+
+		&__logo{
+			width: pcMin(245);
+		}
+		&__logo-ja{
+			margin-top: pcMin(10);
+			font-size: pcMin(16);
+		}
+
+		&__copy{
+			margin-top: pcMin(36);
+			width: pcMin(360);
+		}
+
+		&__txt{
+			margin-top: pcMin(50);
+			font-size: pcMin(16);
+			line-height: 2.1;
+		}
+
+		.to-company-site{
+			width: pcMin(197);
+			margin-top: pcMin(50);
+			a{
+				border-color: #fff;
+				background-image: url(../../../../../public/assets/images/icn_blank_wh.svg);
+				background-size: pcMin(16) pcMin(16);
+				background-repeat: no-repeat;
+				background-position: right pcMin(15) top pcMin(5);
+			}
+			img{
+				width: pcMin(136);
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////
+// bottom-logo-block
+////////////////////////////////////////////////////////////
+.bottom-logo-block{
+	padding: pcMin(390) 0;
+	img{
+		width: pcMin(425);
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+@use "../variable" as *;
+@use "../mixin" as *;
+@use "sass:math";
+
+body{
+	width: 100%;
+	// min-width: 1200px;
+	color: $base_fontColor;
+	line-height: 1.9;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: source-han-sans-japanese, "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic","メイリオ","Meiryo","Osaka","ＭＳ Ｐゴシック", "MS P Gothic",Verdana,Arial, Helvetica, sans-serif;
+	position: relative;
+	max-width: 100%;
+	// -webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@media only screen and (max-width: $breakpoint){
+		min-width: 320px;
+		width: 100%;
+		font-size: vw(12)
+	}
+}
+
+input,textarea,select {
+	font-family: source-han-sans-japanese, "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic","メイリオ","Meiryo","Osaka","ＭＳ Ｐゴシック", "MS P Gothic",Verdana,Arial, Helvetica, sans-serif;
+}
+
+a:focus{
+	outline:none;
+}
+a{
+	color: $base_fontColor;
+	text-decoration:none;
+}
+
+img{
+	max-width: 100%;
+}
+
+////////////////////////////////////////////////////////////
+// pc sp
+////////////////////////////////////////////////////////////
+.SP{
+	@media only screen and (min-width: $breakpoint + 1){
+		display: none !important;
+	}
+}
+.PC{
+	@media only screen and (max-width: $breakpoint){
+		display: none !important;
+	}
+}
+
+
+
+
+#wrap{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	@media only screen and (max-width: $breakpoint){
+		min-width: 100%;
+	}
+}

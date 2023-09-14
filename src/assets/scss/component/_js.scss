@@ -1,0 +1,15 @@
+@use "../variable" as *;
+@use "../mixin" as *;
+
+
+////////////////////////////////////////////////////////////
+//  js
+////////////////////////////////////////////////////////////
+.js-bg-set{
+  img{
+    display: none !important;
+  }
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
